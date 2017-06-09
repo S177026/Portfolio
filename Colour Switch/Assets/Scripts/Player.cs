@@ -32,6 +32,13 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D (Collider2D col)
     {
+        if (col.tag == "Change_Color")
+        {
+            SetRandomColor();
+            Destroy(col.gameObject);
+            return;
+        }
+
         if (col.tag != currentColor)
         {
 
